@@ -1,0 +1,40 @@
+﻿
+<html> 
+<head>
+   
+    <title>Array en JavaScrip</title>
+</head>
+<body>
+    <h1 id="elemento1"> Demo5 Array en JS</h1>
+    <button id="elemento2">Boton1</button>
+    <button id="elemento3">Boton2</button>
+    <div id="botonera"> 
+        
+     </div>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            for (var i = 1; i < 4; i++) {
+                var a = document.getElementById('elemento' + i);
+             
+                a.addEventListener('click', function () {
+                    alert(this.innerHTML);
+                });
+            }
+            var botonera = document.getElementById('botonera');
+            for (var i = 1; i < 100; i++) {
+                var boton = document.createElement("button");
+                boton.innerText = i;
+                botonera.appendChild(boton);
+                boton.addEventListener('click', function () {
+                    alert(this.innerHTML);
+                });
+            }
+           
+        }
+       
+        
+    </script>
+
+</body>
+</html>

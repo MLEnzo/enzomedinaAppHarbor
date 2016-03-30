@@ -36,7 +36,8 @@
 
         window.onload = function () {
         	for (var i = 1; i < 11; i++) {
-        		var a = document.getElementById('btn' + i);
+        	    var a = document.getElementById('btn' + i);
+        	    
 
         		a.addEventListener('click', function () {  //enviar numero al input
         			var d = document.getElementById('numero');
@@ -44,6 +45,13 @@
         			d.scrollLeft = d.scrollWidth;//desplazamiento
         		});
         	};
+
+        	var c = document.getElementById('btn11');
+        	c.addEventListener('click', function () {
+        	    var ce = document.getElementById('numero');
+        	    ce.value = "";
+
+        	})
         };
 	</script>
 

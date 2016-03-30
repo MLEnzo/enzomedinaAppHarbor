@@ -12,46 +12,76 @@
 
 	</div>
 	<br />
-	<div id="botonera">
-		<button id="btn1">1</button>
-		<button id="btn2">2</button>
-		<button id="btn3">3</button>
-		<br />
-		<button id="btn4">4</button>
-		<button id="btn5">5</button>
-		<button id="btn6">6</button>
-		<br />
-		<button id="btn7">7</button>
-		<button id="btn8">8</button>
-		<button id="btn9">9</button>
-		<br />
-		<button id="btn10">0</button>
-		<button id="btn11">CE</button>
+    <div id="botonera">
+        <div id="botonera1">
+            <button id="btn1">1</button>
+            <button id="btn2">2</button>
+            <button id="btn3">3</button>
 
-		 
-	</div>
+        </div>
 
+        <div id="botonera2">
+            <button id="btn4">4</button>
+            <button id="btn5">5</button>
+            <button id="btn6">6</button>
 
+        </div>
+
+        <div id="botonera3">
+            <button id="btn7">7</button>
+            <button id="btn8">8</button>
+            <button id="btn9">9</button>
+
+        </div>
+
+               
+    </div>
+    <div id="botonera4">
+        <button id="btn10">0</button>
+        <button id="btn11">CE</button>
+    </div>
+    
 	<script type="text/javascript">
 
         window.onload = function () {
-        	for (var i = 1; i < 11; i++) {
-        	    var a = document.getElementById('btn' + i);
-        	    
+            for (var i = 1; i < 11; i++) {
+                var a = document.getElementById('btn' + i);
 
-        		a.addEventListener('click', function () {  //enviar numero al input
-        			var d = document.getElementById('numero');
-        			d.value = d.value + this.innerHTML; //concatenacion
-        			d.scrollLeft = d.scrollWidth;//desplazamiento
-        		});
-        	};
 
-        	var c = document.getElementById('btn11');
-        	c.addEventListener('click', function () {
-        	    var ce = document.getElementById('numero');
-        	    ce.value = "";
+                a.addEventListener('click', function () {  //enviar numero al input
+                    var d = document.getElementById('numero');
+                    d.value = d.value + this.innerHTML; //concatenacion
+                    d.scrollLeft = d.scrollWidth;//desplazamiento
+                    var desorden = this;
+                    desordenarTodo(desorden);
+                });
 
-        	})
+            };
+
+            var c = document.getElementById('btn11'); //funcion acerar calculadora
+            c.addEventListener('click', function () {
+                var ce = document.getElementById('numero');
+                ce.value = "";
+
+            });
+
+
+
+            
+            function desordenarTodo(a) {  //desordenar numeros
+              
+                for (var i = 0; i < (botonera.children.length - 1) ; i++) {
+                    var rand = Math.floor(Math.random() * botonera.children.length - 1);
+                    
+                    var b = botonera.children[rand];
+                    mover(b);
+                }
+
+                function mover(a) {
+                    botonera.removeChild(a);
+                    botonera.appendChild(a);
+                };
+            };
         };
 	</script>
 

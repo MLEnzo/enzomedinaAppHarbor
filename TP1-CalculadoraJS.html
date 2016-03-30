@@ -1,0 +1,54 @@
+<html>
+<head>
+    
+    <title>TP - Calculadora Aleatoria</title>
+</head>
+<body>
+	<h1>TPN°1: Calculadora</h1>
+
+	<div id="display">
+		<input id="numero" type="text" name="" value=""  />
+
+
+	</div>
+	<br />
+	<div id="botonera">
+		<button id="btn1">1</button>
+		<button id="btn2">2</button>
+		<button id="btn3">3</button>
+		<br />
+		<button id="btn4">4</button>
+		<button id="btn5">5</button>
+		<button id="btn6">6</button>
+		<br />
+		<button id="btn7">7</button>
+		<button id="btn8">8</button>
+		<button id="btn9">9</button>
+		<br />
+		<button id="btn10">0</button>
+		<button id="btn11">CE</button>
+
+		 
+	</div>
+	>
+
+	<script type="text/javascript">
+
+        window.onload = function () {
+        	for (var i = 1; i < 11; i++) {
+        		var a = document.getElementById('btn' + i);
+
+        		a.addEventListener('click', function () {
+        			var d = document.getElementById('numero');
+        			d.value = this.innerHTML;
+        		});
+        	};
+        };
+	</script>
+
+	<hr />
+	<hr />
+	<br />
+
+</body>
+</html>
